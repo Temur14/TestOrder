@@ -1,0 +1,15 @@
+-- CREATE TABLE user(
+--     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+--     username VARCHAR(255),
+--     email VARCHAR(255),
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+--     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+-- );
+
+CREATE TABLE orders (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    book_id INT NOT NULL,
+    summa decimal(10,2) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    FOREIGN KEY (book_id) REFERENCES book(id)
+);
